@@ -14,7 +14,7 @@ $(window).ready(function () {
 
     $('.custom-select .current-value').click(function() {
 
-        if($(this).hasClass('active')) {
+        if($(this).parent().hasClass('active')) {
             $(this).parent().removeClass('active');
         } else {
             $('.custom-select').removeClass('active');
@@ -28,14 +28,14 @@ $(window).ready(function () {
 
         if(!$(this).hasClass('active')) {
 
-            var newCity = $(this).find('span').text();
-            var newPhone = $(this).find('a').text();
+            var newCity = $(this).children('span').text();
+            var newPhone = $(this).find('a').html();
             var newLink = $(this).find('a').attr('href');
 
             $(this).siblings().removeClass('active');
             $(this).addClass('active');
-            $(this).parents('.select-city').find('.current-value').text(newCity);
-            $(this).parents('.select-city').siblings('.link-phone').find('a').text(newPhone);
+            $(this).parents('.select-city').find('.current-value').html(newCity);
+            $(this).parents('.select-city').siblings('.link-phone').find('a').html(newPhone);
             $(this).parents('.select-city').siblings('.link-phone').find('a').attr('href', newLink);
 
             $(this).parents('.select-city').removeClass('active');
