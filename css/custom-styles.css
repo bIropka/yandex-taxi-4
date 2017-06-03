@@ -167,7 +167,7 @@ section .sub-title {
   font-size: 17px;
   text-transform: uppercase;
   text-align: center;
-  margin: 25px 0 0 0;
+  margin: 20px 0 0 0;
   line-height: 1;
 }
 section .sub-title:before {
@@ -559,12 +559,262 @@ header[role='banner'] .logo span {
 /***********************************************************************************************************************
 *********** conditions
 ***********************************************************************************************************************/
+.conditions-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-start;
+  margin: 25px 0 0 0;
+}
+.conditions-list .conditions-item {
+  width: 189px;
+  border-top: 8px solid #00809b;
+  margin: 15px 0;
+}
+.conditions-list .image-wrap {
+  width: 175px;
+  height: 80px;
+  margin: 7px auto;
+  overflow: hidden;
+  position: relative;
+}
+.conditions-list .image-wrap img {
+  display: block;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.conditions-list .text {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  background: #fff;
+  border: 15px solid #fff;
+  overflow: hidden;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.conditions-list .text span {
+  display: block;
+  width: 100%;
+  font-size: inherit;
+  font-weight: inherit;
+  color: #e04b37;
+  line-height: 1.4;
+}
 /***********************************************************************************************************************
 *********** advantages
 ***********************************************************************************************************************/
+.advantages-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 25px 0;
+}
+.advantages-list .advantages-item {
+  width: 190px;
+  height: 180px;
+  background: #3e4040;
+  padding: 25px;
+  color: #fff;
+  line-height: 1.4;
+  position: relative;
+}
+.advantages-list .advantages-item:before {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 80px;
+  background: #00809b url(../images/sprite-2.png) no-repeat 0 0;
+  position: absolute;
+  bottom: -20px;
+  right: 0;
+}
+.advantages-list .advantages-item:nth-of-type(2):before {
+  background-position: -80px 0;
+}
+.advantages-list .advantages-item:nth-of-type(3):before {
+  background-position: -160px 0;
+}
+.advantages-list .advantages-item:nth-of-type(4):before {
+  background-position: -240px 0;
+}
+.advantages-list .advantages-item:nth-of-type(5):before {
+  background-position: -320px 0;
+}
+.advantages-list .advantages-item:nth-of-type(6):before {
+  background-position: -400px 0;
+}
 /***********************************************************************************************************************
 *********** examination
 ***********************************************************************************************************************/
+.examination-steps {
+  margin: 25px 0;
+  border: 1px solid #cbcbcb;
+  -webkit-box-shadow: inset 0 0 0 1px #ffffff;
+  -moz-box-shadow: inset 0 0 0 1px #ffffff;
+  box-shadow: inset 0 0 0 1px #ffffff;
+  padding: 20px 40px 40px 40px;
+  text-align: center;
+}
+.examination-steps .title {
+  display: inline-block;
+  background: #ebebeb;
+  padding: 0 15px;
+  z-index: 1;
+  color: #00809b;
+  font-size: 17px;
+  font-weight: 600;
+  font-style: italic;
+  position: relative;
+  top: -30px;
+}
+.examination-steps ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: flex-start;
+  align-content: flex-start;
+  width: 100%;
+  text-align: left;
+  counter-reset: list;
+}
+.examination-steps li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 450px;
+  min-height: 49px;
+  margin: 15px 0 15px 100px;
+  padding: 0 0 0 70px;
+  line-height: 1.3;
+  position: relative;
+}
+.examination-steps li:before {
+  content: counter(list) '';
+  counter-increment: list;
+  display: block;
+  width: 49px;
+  height: 49px;
+  text-align: center;
+  font-weight: 600;
+  color: #3e4040;
+  line-height: 49px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 3;
+}
+.examination-steps li:after {
+  content: '';
+  display: block;
+  width: 49px;
+  height: 49px;
+  background: url(../images/decor-examination.png) no-repeat 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.examination-steps li span {
+  display: block;
+  width: 49px;
+  height: 49px;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+}
+.examination-steps li:nth-child(1) span:before {
+  content: '';
+  display: block;
+  width: 43px;
+  height: 43px;
+  border: 3px solid #abafb0;
+  position: absolute;
+  left: -3px;
+  top: -3px;
+  z-index: 1;
+}
+.examination-steps li:nth-child(1) span:after {
+  content: '';
+  display: block;
+  width: 22px;
+  height: 22px;
+  border-left: 3px solid #e04b37;
+  border-top: 3px solid #e04b37;
+  position: absolute;
+  left: -3px;
+  top: -3px;
+  z-index: 2;
+}
+.examination-steps li:nth-child(2) span:before {
+  content: '';
+  display: block;
+  width: 43px;
+  height: 43px;
+  border: 3px solid #abafb0;
+  position: absolute;
+  left: -3px;
+  top: -3px;
+  z-index: 1;
+}
+.examination-steps li:nth-child(2) span:after {
+  content: '';
+  display: block;
+  width: 43px;
+  height: 22px;
+  border-left: 3px solid #e04b37;
+  border-top: 3px solid #e04b37;
+  border-right: 3px solid #e04b37;
+  position: absolute;
+  left: -3px;
+  top: -3px;
+  z-index: 2;
+}
+.examination-steps li:nth-child(3) span:before {
+  content: '';
+  display: block;
+  width: 43px;
+  height: 43px;
+  border: 3px solid #e04b37;
+  position: absolute;
+  left: -3px;
+  top: -3px;
+  z-index: 1;
+}
+.examination-steps li:nth-child(3) span:after {
+  content: '';
+  display: block;
+  width: 22px;
+  height: 22px;
+  border-left: 3px solid #abafb0;
+  border-bottom: 3px solid #abafb0;
+  position: absolute;
+  left: -3px;
+  bottom: 3px;
+  z-index: 2;
+}
+.examination-steps li:nth-child(4) span:before {
+  content: '';
+  display: block;
+  width: 43px;
+  height: 43px;
+  border: 3px solid #e04b37;
+  position: absolute;
+  left: -3px;
+  top: -3px;
+}
 /***********************************************************************************************************************
 *********** steps
 ***********************************************************************************************************************/
