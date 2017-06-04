@@ -61,43 +61,12 @@ $(window).ready(function () {
 
     });
 
-    $('.select-options .current-value').click(function() {
-        $(this).parent().toggleClass('active');
-    });
-
-    $('.select-options ul li').click(function() {
-
-        if(!$(this).hasClass('active')) {
-
-            var newChoice = $(this).text();
-            var newIndex = $(this).index();
-            var optionsWrapper = $(this).parents('.select-options').siblings('.additional-options');
-
-            $(this).addClass('active');
-            $('<div class="option-item">' + newChoice + '<div class="option-close"></div></div>').attr('id', 'item#' + newIndex).appendTo(optionsWrapper);
-
-            $(this).parents('.select-options').removeClass('active');
-
-        }
-
-    });
-
-    $('html').on('click', '.option-close', function() {
-        var curNumber = $(this).parent().attr('id').split('#')[1];
-        $(this).parent().detach();
-        $('.select-options ul li').eq(curNumber).removeClass('active');
-    });
-
-    $('.fill-in-questionnaire').click(function() {
-        $('html, body').animate({scrollTop: $('.questionnaire').offset().top - 50}, 600);
+    $('.to-questionnaire').click(function() {
+        $('html, body').animate({scrollTop: $('.questionnaire').offset().top}, 600);
     });
 
     $('.callback').click(function() {
         $('.window-callback').fadeIn();
-    });
-
-    $('.ask-question').click(function() {
-        $('.window-question').fadeIn();
     });
 
     $('.window').click(function (event) {
@@ -108,6 +77,13 @@ $(window).ready(function () {
         if ($target.hasClass('close-window')){
             $('.window').fadeOut();
         }
+    });
+
+    $('input[type="file"]').change(function() {
+
+        var name = $(this).val().split('\\');
+        $(this).parent().siblings('.text').html(name[name.length - 1]);
+
     });
 
 });
