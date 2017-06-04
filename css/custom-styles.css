@@ -1605,6 +1605,9 @@ footer[role='contentinfo'] .select-city.active .current-value {
     right: auto;
     left: 0;
   }
+  footer[role='contentinfo'] ul {
+    left: 0!important;
+  }
 }
 /***********************************************************************************************************************
 *********** window
